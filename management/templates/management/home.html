@@ -1,0 +1,10 @@
+AUTOFLIPZ - HOMEPAGE
+<br>
+{%if user.is_authenticated%}
+<a href="/profile">Profile</a>
+<a href="/updateProfile">Update Profile</a>
+<a href="/logout">Logout</a>
+{%else%}
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+{%endif%}
