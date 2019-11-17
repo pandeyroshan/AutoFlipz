@@ -1,7 +1,13 @@
+{% extends 'management/base.html' %}
 {% load crispy_forms_tags %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ u_form|crispy }}
-    {{ p_form|crispy }}
-    <button type="submit">UPDATE</button>
-</form>
+{% block content %}
+    <h4 class="text-center text-success mt-4">Update Your Profile</h4>
+    <div class="UForm">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+        <button type="submit">UPDATE</button>
+    </form>
+    </div>
+{% endblock content %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm,UserUpdateForm,ProfileUpdateForm
+from .models import Profile
 # Create your views here.
 
 def register(request):
@@ -34,4 +35,5 @@ def update(request):
     return render(request,'users/updateProfile.html',context)
 
 def profile(request):
-    return render(request,'users/profile.html')
+    user = Profile.objects.get(user=request.user)
+    return render(request,'users/profile.html',{'userData':user})

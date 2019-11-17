@@ -1,1 +1,11 @@
-{{user.username}}
+{% extends 'management/base.html' %}
+
+{% block content %}
+    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" id='myPhoto'>
+    <h3 class="font-weight-light">Name: {{user.profile.name}}</h1>
+    <h4 class="font-weight-light">Phone Number: {{user.profile.phoneNumber}}</h4>
+    <h4 class="font-weight-light">Address: {{user.profile.addressL1}} {{user.profile.addressL2}} {{user.profile.addressL3}}</h4>
+    <h4 class="font-weight-light">Coins: {{user.profile.coins}}</h4>
+    <a href="/updateProfile">Update Profile</a>
+
+{% endblock content %}
